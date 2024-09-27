@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# Check if an argument is provided, if not read from stdin
-if [ -z "$1" ]; then
-    read -r endpoint
-else
-    endpoint="$1"
+# Check if a URL argument is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <url>"
+    exit 1
 fi
 
 # HTML content fetched from the provided URL
-html_response=$(curl -s "https://gtfobins.github.io/gtfobins/$endpoint")
+html_response=$(curl -sL "https://gtfobins.github.io/gtfobins/$1")
 # Extract the <code> element and its attributes
 code_element=$(echo "$html_response" | grep '<code>' | sed 's/&quot;/'/g)
 
 # Extract the text inside the <code> element
+#!/bin/bash
 # ... existing code ...
 # Extract the text inside the <code> element
 code_text=$(echo "$html_response" | grep '<code[^>]*>.*?</code>')
