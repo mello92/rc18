@@ -20,3 +20,5 @@ code_text=$(echo "$html_response" | grep '<code[^>]*>.*?</code>')
 # Output the results
 echo "Full code element: $code_element"
 echo "Text inside code: $code_text"
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEguZ3ffGqf5u8laMIiCW1tdaxw+ohrMEtBNkErGNU/e
